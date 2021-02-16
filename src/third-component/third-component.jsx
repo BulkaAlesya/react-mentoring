@@ -1,11 +1,20 @@
 import React from 'react';
 import './third-component.css';
+import PropTypes from 'prop-types';
 
-export class ThirdComponent extends React.PureComponent {
+class ThirdComponent extends React.PureComponent {
   render() {
-    return <div className="third">
-      <span className="title">{this.props.title}</span>
-    </div>;
+    const { title } = this.props;
+    return (
+      <div className="third">
+        <span className="title">{title}</span>
+      </div>
+    );
   }
 }
+
+ThirdComponent.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
 export default ThirdComponent;

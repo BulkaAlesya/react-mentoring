@@ -3,7 +3,7 @@ import './fourth-component.css';
 
 const fourthComponent = React.createElement(
   'div',
-  { className: 'fourth'},
+  { className: 'fourth' },
   React.createElement('span', { className: 'title' }, 'Create with createComponent'),
 );
 

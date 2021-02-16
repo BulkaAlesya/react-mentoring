@@ -1,9 +1,9 @@
 import './App.css';
-import FirstComponent from './first-component/first-component.jsx';
-import SecondComponent from './second-component/second-component.jsx';
-import ThirdComponent from './third-component/third-component.jsx';
-import FourthComponent from './fourth-component/fourth-component.jsx';
 import React from 'react';
+import FirstComponent from './first-component/first-component';
+import SecondComponent from './second-component/second-component';
+import ThirdComponent from './third-component/third-component';
+import FourthComponent from './fourth-component/fourth-component';
 
 function App() {
   return (
