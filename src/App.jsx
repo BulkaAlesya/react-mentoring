@@ -1,18 +1,21 @@
 import './App.css';
+
 import React from 'react';
-import FirstComponent from './first-component/first-component';
-import SecondComponent from './second-component/second-component';
-import ThirdComponent from './third-component/third-component';
-import FourthComponent from './fourth-component/fourth-component';
+
+import Header from './header/Header';
+import Body from './body/BodyContainer';
+import ErrorBoundary from './Common/ErrorHandler/ErrorBoundary'
 
 function App() {
   return (
-    <div>
-      <FirstComponent title="Create with function" />
-      <SecondComponent title="Create with  Component" />
-      <ThirdComponent title="Create with PureComponent" />
-      <FourthComponent />
-    </div>
+    <>
+      <ErrorBoundary>
+        <Header />
+      </ErrorBoundary>
+      <ErrorBoundary >
+        <Body />
+      </ErrorBoundary>
+    </>
   );
 }
 
