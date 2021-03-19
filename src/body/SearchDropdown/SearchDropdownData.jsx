@@ -6,6 +6,5 @@ export class DropdownItem {
 }
 
 export const SearchItems = [
-  new DropdownItem('Realese date', 1),
-  new DropdownItem('Rating', 2),
-  new DropdownItem('Film Name', 3),]
+  new DropdownItem('Realese date', 'releaseDate'),
+  new DropdownItem('Film Name', 'name'),]

@@ -11,36 +11,50 @@ import {
 } from './SearchDropdown.styled-components';
 import { SearchItems } from './SearchDropdownData';
 
-const Dropdown = ({ items, selected, changeSelected }) => {
+export const Dropdown = ({ items, selected, changeSelected, width, fullSize }) => {
   const [isOpen, openDropdown] = useState(false);
   let showDropdownBlock = () => openDropdown(!isOpen);
+  const onDropdownClick = (i) => {
+    changeSelected(i);
+    showDropdownBlock();
+  };
   const itemComponents = items.map(i => (
-    <DropDownItemElement onClick={() => changeSelected(i.label)}>
+    <DropDownItemElement
+      key={JSON.stringify(i)}
+      onClick={() => onDropdownClick(i)}>
       <BodyTitle textColor="#FFFFFF">{i.label}</BodyTitle>
     </DropDownItemElement>
   ));
   return (
     <span>
-      <SearchDropdownBlock onClick={showDropdownBlock}>
-        <BodyTitle textColor='#FFFFFF'> {selected} </BodyTitle>
-        <DropdownIcon icon={faSortDown}></DropdownIcon>
+      <SearchDropdownBlock
+        width={width}
+        fullSize={fullSize}
+        onClick={showDropdownBlock}>
+        <span><BodyTitle textColor='#FFFFFF'> {selected} </BodyTitle></span>
+        <span><DropdownIcon icon={faSortDown}></DropdownIcon></span>
       </SearchDropdownBlock>
-      <DropDownItemContainer isOpen={isOpen}>
+      <DropDownItemContainer
+        width={width}
+        isOpen={isOpen}>
         {itemComponents}
       </DropDownItemContainer>
     </span>
   )
 }
-Dropdown.PropTypes = {
+Dropdown.propTypes = {
   items: PropTypes.array.isRequired,
   selected: PropTypes.string.isRequired,
-  changeSelected: PropTypes.func.isRequired
+  changeSelected: PropTypes.func.isRequired,
+  width: PropTypes.number,
+  fullSize: PropTypes.bool
 }
 
-const SearchDropdown = () => {
+export const SearchDropdown = ({ onAction }) => {
   const [selectedItem, updateSelectedItem] = useState('Realese date');
   const dropdownClick = (a) => {
-    updateSelectedItem(a);
+    updateSelectedItem(a.label);
+    onAction(a);
   };
 
   return (
@@ -54,4 +68,4 @@ const SearchDropdown = () => {
     </div>
   );
 }
-export default SearchDropdown;
+

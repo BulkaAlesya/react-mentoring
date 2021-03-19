@@ -35,7 +35,7 @@ export const MovieTitle = styled.div`
   font-family: 'Quicksand', sans-serif;
   margin-top: 5px;
 `;
-MovieTitle.PropTypes = {
+MovieTitle.propTypes = {
   textSize: PropTypes.number
 }
 
