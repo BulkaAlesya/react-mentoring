@@ -8,14 +8,14 @@ import ErrorBoundary from './Common/ErrorHandler/ErrorBoundary'
 
 function App() {
   return (
-    <>
+    <div>
       <ErrorBoundary>
         <Header />
       </ErrorBoundary>
       <ErrorBoundary >
         <Body />
       </ErrorBoundary>
-    </>
+    </div>
   );
 }
 

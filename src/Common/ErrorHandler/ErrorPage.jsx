@@ -10,7 +10,7 @@ const ErrorPage = React.Catch(function MyErrorBoundary(props, error) {
       <LogoTitle></LogoTitle>
       <NotFoundTextBox>404</NotFoundTextBox>
       <ButtonBlock>
-        <GoBackButton onClick={onButtonClick}> <BodyTitle textSize="40" textColor=" #F65251">Go Back To Home </BodyTitle></GoBackButton>
+        <GoBackButton onClick={onButtonClick}> <BodyTitle textSize={40} textColor=" #F65251">Go Back To Home </BodyTitle></GoBackButton>
       </ButtonBlock>
     </NotFoundContainer>)
       : props.children

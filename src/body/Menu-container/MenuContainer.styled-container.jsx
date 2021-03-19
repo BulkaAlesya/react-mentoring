@@ -10,7 +10,7 @@ export const MenuItem = styled.button`
   border-bottom: ${props => props.active ? 'solid #f65261 2px' : ''};
 `;
 
-MenuItem.PropTypes = {
+MenuItem.propTypes = {
   active: PropTypes.bool
 }
 

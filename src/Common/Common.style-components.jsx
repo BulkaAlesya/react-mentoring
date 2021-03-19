@@ -7,7 +7,7 @@ export const BodyTitle = styled.span`
   font-family: 'Quicksand', sans-serif;
   text-transform: uppercase;
 `;
-BodyTitle.PropTypes = {
+BodyTitle.propTypes = {
   textColor: PropTypes.string.isRequired,
   textSize: PropTypes.number
 }
@@ -27,4 +27,7 @@ export const Button = styled.button`
   height: 40px;
   width: 180px;
   font-weight: 900;
+  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  
 `;
